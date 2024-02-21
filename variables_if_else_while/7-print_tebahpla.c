@@ -1,20 +1,23 @@
 #include <stdio.h>
 
+
 /**
- * main - prints all single digit nu,ber from 0
+ * main - prints the lowercase alphabet in reverse, followed by a new line
  *
- * Return: Always 0
+ * Return: Always 0.
+ *
  */
 
 int main(void)
 {
-	int i;
+	char letter;
 
-	for (i = 0; i < 10; i++)
-	{
-		putchar(i + '0');
-	}
+	for (letter = 'z'; letter >= 'a'; letter--)
+
+	putchar(letter);
+
 	putchar('\n');
-	return (0);
 
+	return (0);
 }
+
