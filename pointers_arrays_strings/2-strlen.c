@@ -1,21 +1,17 @@
 #include "main.h"
 
 /**
- * _strlen(char *s) - Returns the length of a string
- * @s: - Integet to be swapped.
- * Return - is 0
- *
+ * _strlen - Returns the length of a string
+ * @s: - The string to get the lenght of
+ * Return: The length of string.
  */
 
-int_strlen(char *s)
+	int _strlen(char *s)
 {
+	int i;
+	int count = 0;
 
-	int lenght = 0;
-
-	while (*s != '0\')
-	{
-	length++;
-	s++;
-	}
-	return lenght;
+	for (i = 0; s[i] != '\0'; i++)
+		count++;
+	return (count);
 }
