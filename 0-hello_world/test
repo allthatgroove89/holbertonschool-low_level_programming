@@ -1,0 +1,11 @@
+#include <stdio
+
+/**
+ * main
+ * return
+ */
+
+int main ()
+{
+  printf("
+}
