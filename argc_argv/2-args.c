@@ -1,7 +1,16 @@
 #include <stdio.h>
 
+/**
+ * main - entry point
+ * description - print all arguments it receives
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: is 0
+ */
+
 int main(int argc, char *argv[])
 {
+
 int i;
 
 for (i = 0; i < argc; i++)
