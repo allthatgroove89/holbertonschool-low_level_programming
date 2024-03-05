@@ -8,7 +8,7 @@
  * Return: 0 or error
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	if (argc != 3)
 	{
@@ -18,6 +18,6 @@ int main (int argc, char *argv[])
 
 	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 
-	return(0);
+	return (0);
 
 }
