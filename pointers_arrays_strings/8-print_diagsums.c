@@ -1,9 +1,9 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
  * print_diagsums - print sum of diagram
  * @a: ppints to first element
- * @size: size to compar
+ * @size: size to compare
  * Return: 0
  */
 void print_diagsums(int *a, int size)
