@@ -7,8 +7,9 @@
  * Return: if malloc fails function should cause normal processs of termination
  */
 
-void *malloc_checked(unsigned int b);
+void *malloc_checked(unsigned int b)
 {
+
 	void *mem;
 
 	if (b == 0)
