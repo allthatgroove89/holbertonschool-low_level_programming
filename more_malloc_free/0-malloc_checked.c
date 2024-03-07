@@ -4,8 +4,7 @@
 /**
  * malloc_checked - allocates memory using malloc
  * @b: counts elements
- * Return: If malloc fails, the function should terminate
- * the process with a status of 98.
+ * Return: Nothing.
  */
 
 void *malloc_checked(unsigned int b)
