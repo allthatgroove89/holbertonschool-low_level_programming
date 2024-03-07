@@ -1,15 +1,15 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
 
- /**
+/**
  * malloc_checked - allocates memory using malloc
  * @b: counts elements
- * Return: if malloc fails function should cause normal processs of termination
+ * Return: Nothing.
  */
 
 void *malloc_checked(unsigned int b)
 {
-
 	void *mem;
 
 	if (b == 0)
