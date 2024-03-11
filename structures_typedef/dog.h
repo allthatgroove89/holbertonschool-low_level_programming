@@ -30,4 +30,4 @@ void free_dog(dog_t *d);
 
 char *_strcpy(char *s);
 int _strlen(char *s);
-
+#endif
