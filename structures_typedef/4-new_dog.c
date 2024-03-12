@@ -68,10 +68,10 @@ char *_strcpy(char *s)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < len; i++)
+	for (i = 0; i < len - 1; i++)
 	{
 		scopy[i] = s[i];
 	}
-
+	scopy[len - 1] = '\0';
 	return (scopy);
 }
