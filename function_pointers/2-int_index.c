@@ -1,4 +1,4 @@
-
+#include "function_pointers.h"
 /**
  * int_index - return index of the first element
  * @size: number of element of the array
