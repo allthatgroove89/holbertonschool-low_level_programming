@@ -2,29 +2,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* main -
-* @argc:
-* @argv:
-* Return:
-*/
+ * main - a program that performs simple operations
+ * @argc: int
+ * @argv: char
+ * Return: 98,99 or 100, dependes on the operation
+ */
 
 int main(int argc, char *argv[])
 {
-    int (*oprt)(int, int);
-    if (argc != 4)
-    {
-        printf("Error\n");
-        return (98);
-    }
+	int (*oprt)(int, int);
 
-    oprt = get_op_func(argv[2]);
+	if (argc != 4)
+	{
+		printf("Error\n");
+		return (98);
+	}
 
-    if (!oprt)
-    {
-        printf("Error\n");
-        return (99);
-    }
+	oprt = get_op_func(argv[2]);
 
-    printf("%d\n", oprt(atoi(argv[1]), atoi(argv[3])));
-    return 0;
+	if (!oprt)
+	{
+		printf("Error\n");
+		return (99);
+	}
+
+	printf("%d\n", oprt(atoi(argv[1]), atoi(argv[3])));
+	return (0);
 }
