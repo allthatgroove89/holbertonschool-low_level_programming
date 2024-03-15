@@ -1,85 +1,48 @@
-
-
-/**
- * print_char - print a character
- * @args: arguments
- */
-
-void print_char(va_list args)
-{
-	printf("%c", va_arg(args, int));
-}
+#include "variadic_functions.h"
+#include <stdarg.h>
+#include <stdio.h>
 
 /**
- * print_string - prints a string
- * @args: arguments
+ * print_all - prints anything, depending on the format
+ * @format: a list of types of arguments passed to the function
+ * Description: Types are:
+ * c: char
+ * i: integer
+ * f: float
+ * s: char* (prints (nil) if string is NULL)
  */
-
-void print_string(va_list args)
-{
-	char *str = va_arg(args, char *);
-
-	if (str == NULL)
-		str = "(nil)";
-	printf("%s", str);
-}
-
-/**
- * print_float - prints a inter of type double
- * @args: arguments
- */
-
-void print_float(va_list args)
-{
-	printf("%f", va_arg(args, double));
-}
-
-/**
- * print_int - prints interger
- * @args: arguments
- */
-void print_int(va_list args)
-{
-	printf("%i", va_arg(args, int));
-}
-
-/**
- * print_all - print anything
- * @format: list of types of arguments ot passed funcion
- */
-
 void print_all(const char * const format, ...)
 {
-	int i, j;
-	char *space = "";
-
+	unsigned int i = 0;
+	char *str, *separator = "";
 	va_list args;
-
-	fname_t func[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"i", print_int},
-		{"f", print_float},
-		{NULL, NULL}
-	};
 
 	va_start(args, format);
 
-	i = 0;
-	while (format != NULL && format[i] != '\0')
+	while (format && format[i])
 	{
-		j = 0;
-		while (func[j].opsym != NULL)
+		switch (format[i])
 		{
-			if (*(func[j].opsym) == format[i])
-			{
-				printf("%s", space);
-				func[j].f(args);
-				space = ", ";
-			}
-			j++;
+			case 'c':
+				printf("%s%c", separator, va_arg(args, int));
+				break;
+			case 'i':
+				printf("%s%d", separator, va_arg(args, int));
+				break;
+			case 'f':
+				printf("%s%f", separator, va_arg(args, double));
+				break;
+			case 's':
+				str = va_arg(args, char *);
+				if (!str)
+					str = "(nil)";
+				printf("%s%s", separator, str);
+				break;
 		}
+		separator = ", ";
 		i++;
 	}
-	putchar('\n');
+	va_end(args);
+
+	printf("\n");
 }
