@@ -1,53 +1,85 @@
-#include "variadic_functions.h"
-#include <stdarg.h>
+
 
 /**
- * print_all - a function that returns the sum of its parameters
+ * print_char - print a character
+ * @args: arguments
+ */
+
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+
+/**
+ * print_string - prints a string
+ * @args: arguments
+ */
+
+void print_string(va_list args)
+{
+	char *str = va_arg(args, char *);
+
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s", str);
+}
+
+/**
+ * print_float - prints a inter of type double
+ * @args: arguments
+ */
+
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ * print_int - prints interger
+ * @args: arguments
+ */
+void print_int(va_list args)
+{
+	printf("%i", va_arg(args, int));
+}
+
+/**
+ * print_all - print anything
  * @format: list of types of arguments ot passed funcion
- *
- * Return: 0 if n is equal 0
  */
 
 void print_all(const char * const format, ...)
 {
+	int i, j;
+	char *space = "";
+
 	va_list args;
-	int i = 0;
-	char *s;
+
+	fname_t func[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"i", print_int},
+		{"f", print_float},
+		{NULL, NULL}
+	};
 
 	va_start(args, format);
 
-	while (format && format[i])
+	i = 0;
+	while (format != NULL && format[i] != '\0')
 	{
-		if (i > 0)
+		j = 0;
+		while (func[j].opsym != NULL)
 		{
-			printf(", ");
-		}
-		if (format[i] == 'c')
-		{
-			printf("%c", va_arg(args, int));
-		}
-		if (format[i] == 'i')
-		{
-			printf("%d", va_arg(args, int));
-		}
-		if (format[i] == 'f')
-		{
-			printf("%f", (float)va_arg(args, double));
-		}
-		if (format[i] == 's')
-		{
-			s = va_arg(args, char *);
-			if (s == NULL)
-				printf("(nil)");
-			else
+			if (*(func[j].opsym) == format[i])
 			{
-				printf("%s", s);
+				printf("%s", space);
+				func[j].f(args);
+				space = ", ";
 			}
+			j++;
 		}
 		i++;
 	}
-
-	printf("\n");
-
-	va_end(args);
+	putchar('\n');
 }
