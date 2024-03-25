@@ -1,70 +1,65 @@
-## Linked Lists Readme
-
-
+# Linked Lists Readme
 
 ## Installation
 
 Access Github and request a pull, [link](https://github.com/allthatgroove89/holbertonschool-printf/pulls) to install to get function package.
 
-
-
 ## Function Prototypes
-
 
 All function prototypes used to compile are included in the header file:
 
 - size_t print_list(const list_t *h);
 - size_t list_len(const list_t *h);
-- list_t *add_node(list_t **head, const char *str);
-- list_t *add_node_end(list_t **head, const char *str);
+- list_t *add_node(list_t **head, const char*str);
+- list_t *add_node_end(list_t **head, const char*str);
 - void free_list(list_t *head)
 
-## Tasks:
+## Tasks
 
 ### 0. Print list
 
+  Write a function that prints all the elements of a list_t list.
 
-Write a function that prints all the elements of a list_t list.
+  Prototype: size_t print_list(const list_t *h);
 
-	Prototype: size_t print_list(const list_t *h);
+Return: the number of nodes
+  Format: see example
+If str is NULL, print [0] (nil)
+  You are allowed to use printf
 
-   Return: the number of nodes
-   Format: see example
-    If str is NULL, print [0] (nil)
-    You are allowed to use printf
-
-```
-julien@ubuntu:~/Singly linked lists$ ./a
-[5] Hello
-[5] World
--> 2 elements
+  ```C
+  julien@ubuntu:~/Singly linked lists$ ./a
+  [5] Hello
+  [5] World
+  -> 2 elements
 
 [0] (nil)
-[5] World
--> 2 elements
-```
- ### 1. List length
+  [5] World
+  -> 2 elements
+  ```C
+### 1. List length
 
 
-Write a function that returns the number of elements in a linked list_t list.
+  Write a function that returns the number of elements in a linked list_t list.
 
-    Prototype: size_t list_len(const list_t *h);
+  Prototype: size_t list_len(const list_t *h);
 
 
-```C
+  ```C
   julien@ubuntu:~/Singly linked lists$ ./b
--> 2 elements
-```
+  -> 2 elements
+  ```
 
 ### 2. Add node
 
-Write a function that adds a new node at the beginning of a list_t list.
+  Write a function that adds a new node at the beginning of a list_t list.
 
-    Prototype: list_t *add_node(list_t **head, const char *str);
-  Return: the address of the new element, or NULL if it failed
-    str needs to be duplicated
-    You are allowed to use strdup
-```
+  Prototype: list_t *add_node(list_t **head, const char*str);
+Return: the address of the new element, or NULL if it failed
+str needs to be duplicated
+You are allowed to use strdup
+
+```C
 julien@ubuntu:~/Singly linked lists$ ./c
 [3] Zee
 [7] William
@@ -98,14 +93,14 @@ julien@ubuntu:~/Singly linked lists$ ./c
 
 ### 3. Add node at the end
 
-
 Write a function that adds a new node at the end of a list_t list.
 
-    Prototype: list_t *add_node_end(list_t **head, const char *str);
-   Return: the address of the new element, or NULL if it failed
-    str needs to be duplicated
-    You are allowed to use strdup
-```
+Prototype: list_t *add_node_end(list_t **head, const char*str);
+Return: the address of the new element, or NULL if it failed
+str needs to be duplicated
+You are allowed to use strdup
+
+```C
 julien@ubuntu:~/Singly linked lists$ ./d
 [4] Anne
 [6] Colton
@@ -139,12 +134,11 @@ julien@ubuntu:~/Singly linked lists$ ./d
 
 ### 4. Free list
 
-
 Write a function that frees a list_t list.
 
-    Prototype: void free_list(list_t *head);
+Prototype: void free_list(list_t *head);
 
-```
+```C
 julien@ubuntu:~/Singly linked lists$ valgrind ./e
 ==3598== Memcheck, a memory error detector
 ==3598== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
@@ -167,9 +161,6 @@ julien@ubuntu:~/Singly linked lists$ valgrind ./e
 ==3598== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
-
-
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
@@ -177,9 +168,6 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-
-
-
 ## Authors and acknowledgment
 
-## Saul Vera Echevestre (saul.vera787@gmail.com) , github [link](https://github.com/allthatgroove89/holbertonschool-printf).
+## Saul Vera Echevestre (<saul.vera787@gmail.com>) , github [link](https://github.com/allthatgroove89/holbertonschool-printf)
