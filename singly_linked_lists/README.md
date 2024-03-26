@@ -34,7 +34,7 @@ If str is NULL, print [0] (nil)
 
 You are allowed to use printf
 
-    ```C
+```C
 
 julien@ubuntu:~/Singly linked lists$ ./a
 
@@ -50,7 +50,7 @@ julien@ubuntu:~/Singly linked lists$ ./a
 
 -> 2 elements
 
-    ```C
+```
 
 ### 1. List length
 
@@ -58,13 +58,13 @@ Write a function that returns the number of elements in a linked list_t list.
 
 Prototype: size_t  list_len(const  list_t *h);
 
-    ```C
+```C
 
 julien@ubuntu:~/Singly linked lists$ ./b
 
 -> 2 elements
 
-    ```C
+```
 
 ### 2. Add node
 
@@ -78,7 +78,7 @@ str needs to be duplicated
 
 You are allowed to use strdup
 
-    ```C
+```C
 
 julien@ubuntu:~/Singly linked lists$ ./c
 
@@ -138,7 +138,7 @@ julien@ubuntu:~/Singly linked lists$ ./c
 
 [9] Alexandro
 
-    ```C
+```
 
 ### 3. Add node at the end
 
@@ -152,7 +152,7 @@ str needs to be duplicated
 
 You are allowed to use strdup
 
-    ```C
+```C
 
 julien@ubuntu:~/Singly linked lists$ ./d
 
@@ -212,7 +212,7 @@ julien@ubuntu:~/Singly linked lists$ ./d
 
 [6] Walton
 
-    ```C
+```
 
 ### 4. Free list
 
@@ -220,7 +220,7 @@ Write a function that frees a list_t list.
 
     Prototype: void free_list(list_t *head);
 
-    ```C
+```C
 
 julien@ubuntu:~/Singly linked lists$ valgrind ./e
 
@@ -262,7 +262,7 @@ julien@ubuntu:~/Singly linked lists$ valgrind ./e
 
 ==3598== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
-    ```C
+```
 
 ## Contributing
 
