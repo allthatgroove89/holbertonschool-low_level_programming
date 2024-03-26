@@ -1,4 +1,4 @@
-# Linked Lists Readme
+# Doubly Linked Lists Readme
 
 ## Installation
 
